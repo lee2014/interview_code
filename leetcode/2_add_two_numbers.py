@@ -54,13 +54,13 @@ class Solution(object):
 
             over_digit = current_node.val / 10
             if over_digit != 0:
-                current_node.val = current_node.val % 10
+                current_node.val %= 10
             current_node = current_node.next
-            current_node.val = current_node.val + over_digit
+            current_node.val += over_digit
 
         if current_node.val >= 10:
             current_node.next = ListNode(current_node.val / 10)
-            current_node.val = current_node.val % 10
+            current_node.val %= 10
 
         return new_list
 
